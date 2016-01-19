@@ -15,7 +15,13 @@ For more information on this insanity see "[What was I thinking](#what-was-i-thi
 
 ## What was I thinking?
 
-I made this game a few years ago. Before I knew what to do about the following things:
+I started making this game at the tail end of 2010 when it was a command line game on Windows. 
+
+<img src="https://github.com/convenient/mazeman/raw/master/README/command-line-2010.png" height="300">
+
+The original C source for this game was converted into C++ to be compatible with devkitARM and libNDS and that's when the complexities started to creep in. 
+
+This was all way before I knew what to do about the following things:
 
 * Version control - I pulled this code from a directory path on an old hard drive like `./devkitPro/C++/nds/new/test/new`. Good times.
 * Compiler warnings - If you want to see some funny and easily fixed compilation problems look at [src/make.log](https://github.com/convenient/mazeman/blob/master/src/make.log).
