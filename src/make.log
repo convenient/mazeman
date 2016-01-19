@@ -1,0 +1,113 @@
+$ make
+soundbank.bin
+grit /home/luker/src/maze-man/src/data/font.bmp -fts -ofont
+font.s
+arm-none-eabi-gcc -MMD -MP -MF /home/luker/src/maze-man/src/build/font.d -x assembler-with-cpp -g -mthumb -mthumb-interwork -c font.s -o font.o
+grit /home/luker/src/maze-man/src/data/levelOne.png -fts -olevelOne
+levelOne.s
+arm-none-eabi-gcc -MMD -MP -MF /home/luker/src/maze-man/src/build/levelOne.d -x assembler-with-cpp -g -mthumb -mthumb-interwork -c levelOne.s -o levelOne.o
+grit /home/luker/src/maze-man/src/data/death.png -fts -odeath
+death.s
+arm-none-eabi-gcc -MMD -MP -MF /home/luker/src/maze-man/src/build/death.d -x assembler-with-cpp -g -mthumb -mthumb-interwork -c death.s -o death.o
+grit /home/luker/src/maze-man/src/data/levelThree.png -fts -olevelThree
+levelThree.s
+arm-none-eabi-gcc -MMD -MP -MF /home/luker/src/maze-man/src/build/levelThree.d -x assembler-with-cpp -g -mthumb -mthumb-interwork -c levelThree.s -o levelThree.o
+grit /home/luker/src/maze-man/src/data/titleScreen.png -fts -otitleScreen
+titleScreen.s
+arm-none-eabi-gcc -MMD -MP -MF /home/luker/src/maze-man/src/build/titleScreen.d -x assembler-with-cpp -g -mthumb -mthumb-interwork -c titleScreen.s -o titleScreen.o
+grit /home/luker/src/maze-man/src/data/levelFour.png -fts -olevelFour
+levelFour.s
+arm-none-eabi-gcc -MMD -MP -MF /home/luker/src/maze-man/src/build/levelFour.d -x assembler-with-cpp -g -mthumb -mthumb-interwork -c levelFour.s -o levelFour.o
+grit /home/luker/src/maze-man/src/data/levelTwo.png -fts -olevelTwo
+levelTwo.s
+arm-none-eabi-gcc -MMD -MP -MF /home/luker/src/maze-man/src/build/levelTwo.d -x assembler-with-cpp -g -mthumb -mthumb-interwork -c levelTwo.s -o levelTwo.o
+grit /home/luker/src/maze-man/src/data/levelFive.png -fts -olevelFive
+levelFive.s
+arm-none-eabi-gcc -MMD -MP -MF /home/luker/src/maze-man/src/build/levelFive.d -x assembler-with-cpp -g -mthumb -mthumb-interwork -c levelFive.s -o levelFive.o
+grit /home/luker/src/maze-man/src/data/instructions.png -fts -oinstructions
+instructions.s
+arm-none-eabi-gcc -MMD -MP -MF /home/luker/src/maze-man/src/build/instructions.d -x assembler-with-cpp -g -mthumb -mthumb-interwork -c instructions.s -o instructions.o
+main.cpp
+arm-none-eabi-g++ -MMD -MP -MF /home/luker/src/maze-man/src/build/main.d -g -Wall -O2 -std=gnu++0x -march=armv5te -mtune=arm946e-s -fomit-frame-pointer -ffast-math -mthumb -mthumb-interwork -iquote /home/luker/src/maze-man/src/include -I/home/luker/src/maze-man/devkitpro//libnds/include -I/home/luker/src/maze-man/src/build -DARM9 -fno-rtti -fno-exceptions -c /home/luker/src/maze-man/src/source/main.cpp -o main.o
+/home/luker/src/maze-man/src/source/main.cpp:43:29: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+                             };
+                             ^
+/home/luker/src/maze-man/src/source/main.cpp:43:29: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+/home/luker/src/maze-man/src/source/main.cpp:43:29: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+/home/luker/src/maze-man/src/source/main.cpp:43:29: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+/home/luker/src/maze-man/src/source/main.cpp:43:29: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+/home/luker/src/maze-man/src/source/main.cpp:43:29: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+/home/luker/src/maze-man/src/source/main.cpp:43:29: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+/home/luker/src/maze-man/src/source/main.cpp:43:29: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+/home/luker/src/maze-man/src/source/main.cpp:43:29: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+/home/luker/src/maze-man/src/source/main.cpp:53:25: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+                         };
+                         ^
+/home/luker/src/maze-man/src/source/main.cpp:53:25: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+/home/luker/src/maze-man/src/source/main.cpp:53:25: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+/home/luker/src/maze-man/src/source/main.cpp:53:25: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+/home/luker/src/maze-man/src/source/main.cpp:53:25: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+/home/luker/src/maze-man/src/source/main.cpp:53:25: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+/home/luker/src/maze-man/src/source/main.cpp:53:25: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+/home/luker/src/maze-man/src/source/main.cpp:53:25: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+/home/luker/src/maze-man/src/source/main.cpp: In function 'void actorMove(tile (*)[31], actor&, int, int, mm_sound_effect)':
+/home/luker/src/maze-man/src/source/main.cpp:1554:9: warning: variable 'tempID' set but not used [-Wunused-but-set-variable]
+     int tempID=0; int tempSolidity=0;
+         ^
+/home/luker/src/maze-man/src/source/main.cpp: In function 'int populateLevelTwo(tile (*)[31])':
+/home/luker/src/maze-man/src/source/main.cpp:2521:9: warning: variable 'previousTakenDirection' set but not used [-Wunused-but-set-variable]
+     int previousTakenDirection=STOP;
+         ^
+/home/luker/src/maze-man/src/source/main.cpp: In function 'int populateLevelThree(tile (*)[31])':
+/home/luker/src/maze-man/src/source/main.cpp:2776:9: warning: variable 'previousTakenDirection' set but not used [-Wunused-but-set-variable]
+     int previousTakenDirection=STOP;
+         ^
+/home/luker/src/maze-man/src/source/main.cpp: In function 'int populateLevelOne(tile (*)[31])':
+/home/luker/src/maze-man/src/source/main.cpp:3042:9: warning: variable 'previousTakenDirection' set but not used [-Wunused-but-set-variable]
+     int previousTakenDirection=STOP;
+         ^
+/home/luker/src/maze-man/src/source/main.cpp: In function 'int populateLevelFive(tile (*)[31])':
+/home/luker/src/maze-man/src/source/main.cpp:3230:21: warning: variable 'direction' set but not used [-Wunused-but-set-variable]
+                 int direction=0;
+                     ^
+/home/luker/src/maze-man/src/source/main.cpp: In function 'int populateLevelFour(tile (*)[31])':
+/home/luker/src/maze-man/src/source/main.cpp:3422:9: warning: variable 'previousTakenDirection' set but not used [-Wunused-but-set-variable]
+     int previousTakenDirection=STOP;
+         ^
+/home/luker/src/maze-man/src/source/main.cpp: In function 'int main()':
+/home/luker/src/maze-man/src/source/main.cpp:4417:5: warning: 'u32 vramSetMainBanks(VRAM_A_TYPE, VRAM_B_TYPE, VRAM_C_TYPE, VRAM_D_TYPE)' is deprecated [-Wdeprecated-declarations]
+     vramSetMainBanks(VRAM_A_MAIN_BG_0x06000000,
+     ^
+In file included from /home/luker/src/maze-man/devkitpro//libnds/include/nds/arm9/background.h:87:0,
+                 from /home/luker/src/maze-man/devkitpro//libnds/include/nds.h:253,
+                 from /home/luker/src/maze-man/src/source/main.cpp:1:
+/home/luker/src/maze-man/devkitpro//libnds/include/nds/arm9/video.h:346:34: note: declared here
+ __attribute__ ((deprecated)) u32 vramSetMainBanks(VRAM_A_TYPE a, VRAM_B_TYPE b, VRAM_C_TYPE c, VRAM_D_TYPE d);
+                                  ^
+/home/luker/src/maze-man/src/source/main.cpp:4417:5: warning: 'u32 vramSetMainBanks(VRAM_A_TYPE, VRAM_B_TYPE, VRAM_C_TYPE, VRAM_D_TYPE)' is deprecated [-Wdeprecated-declarations]
+     vramSetMainBanks(VRAM_A_MAIN_BG_0x06000000,
+     ^
+In file included from /home/luker/src/maze-man/devkitpro//libnds/include/nds/arm9/background.h:87:0,
+                 from /home/luker/src/maze-man/devkitpro//libnds/include/nds.h:253,
+                 from /home/luker/src/maze-man/src/source/main.cpp:1:
+/home/luker/src/maze-man/devkitpro//libnds/include/nds/arm9/video.h:346:34: note: declared here
+ __attribute__ ((deprecated)) u32 vramSetMainBanks(VRAM_A_TYPE a, VRAM_B_TYPE b, VRAM_C_TYPE c, VRAM_D_TYPE d);
+                                  ^
+/home/luker/src/maze-man/src/source/main.cpp:4420:32: warning: 'u32 vramSetMainBanks(VRAM_A_TYPE, VRAM_B_TYPE, VRAM_C_TYPE, VRAM_D_TYPE)' is deprecated [-Wdeprecated-declarations]
+                      VRAM_D_LCD);
+                                ^
+In file included from /home/luker/src/maze-man/devkitpro//libnds/include/nds/arm9/background.h:87:0,
+                 from /home/luker/src/maze-man/devkitpro//libnds/include/nds.h:253,
+                 from /home/luker/src/maze-man/src/source/main.cpp:1:
+/home/luker/src/maze-man/devkitpro//libnds/include/nds/arm9/video.h:346:34: note: declared here
+ __attribute__ ((deprecated)) u32 vramSetMainBanks(VRAM_A_TYPE a, VRAM_B_TYPE b, VRAM_C_TYPE c, VRAM_D_TYPE d);
+                                  ^
+/home/luker/src/maze-man/src/source/main.cpp: In function 'void pullSwitch(tile (*)[31], int)':
+/home/luker/src/maze-man/src/source/main.cpp:1858:11: warning: 'door' may be used uninitialized in this function [-Wmaybe-uninitialized]
+     item *door;
+           ^
+linking src.elf
+Nintendo DS rom tool 1.50.3 - Dec 12 2015
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... src.nds
+rm titleScreen.s levelTwo.s font.s levelOne.s death.s instructions.s levelFour.s levelThree.s levelFive.s
