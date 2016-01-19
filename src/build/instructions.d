@@ -1,0 +1,1 @@
+instructions.o: instructions.s
