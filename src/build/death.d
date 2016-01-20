@@ -1,1 +1,0 @@
-death.o: death.s
