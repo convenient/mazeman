@@ -43,3 +43,11 @@ The only reasonable decisions I made in this project were
     export DEVKITARM=${DEVKITPRO}/devkitARM
     make
     //Ignore the lack of compiler warnings and feel free to judge younger, past me.
+
+## Contributing
+
+This code is primarily on GitHub as a monument to my sins.
+
+I'd like to keep the `master` branch as-is, a time-capsule from Spring 2011.
+
+However, if you feel the desire to tidy up some of the mess then feel free to make a pull request to the `develop` branch.
