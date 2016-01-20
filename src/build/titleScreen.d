@@ -1,1 +1,0 @@
-titleScreen.o: titleScreen.s

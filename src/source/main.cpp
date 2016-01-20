@@ -31,7 +31,7 @@ int tryEasy=250;
 int tryNormal=500;
 int tryHard=1000;
 
-char *QUOTES[QUOTECOUNT]={
+const char *QUOTES[QUOTECOUNT]={
                             "Alright. Who wants some?",
                             "I'm a running buffet!",
                             "Zombies hate fast food.",
@@ -41,7 +41,7 @@ char *QUOTES[QUOTECOUNT]={
                             "Time to nut up or shut up.",
                             "You've got red on you"
                             };
-char *HINTS[HINTCOUNT]={
+const char *HINTS[HINTCOUNT]={
                         "Zombies hunt you down with    \n great speed when they sense   \n you.                          \n\n Keep your distance.",
                         "Raising the Game Difficulty   \n increases the Zombies         \n agressiveness and lowers your \n health. ",
                         "Stabbing the Zombies slows    \n them down.                    \n A tactical retreat is an      \n effective technique.",
@@ -1551,7 +1551,8 @@ void animateItem(tile grid[][gridJ],item &T, double delay ){
 //moves the enemy tiles, relevant collision detection
 void actorMove(tile grid[][gridJ],actor &T, int direction, int manDir, mm_sound_effect sfx){
 
-    int tempID=0; int tempSolidity=0;
+    //int tempID=0; 
+    int tempSolidity=0;
     int *animUp=animEnd;
     int *animDown=animEnd;
     int *animLeft=animEnd;
@@ -1582,22 +1583,22 @@ void actorMove(tile grid[][gridJ],actor &T, int direction, int manDir, mm_sound_
 
     if(direction==UP){
         T.setAnim(animUp);
-        tempID=grid[T.getI()-1][T.getJ()].getID();
+        //tempID=grid[T.getI()-1][T.getJ()].getID();
         tempSolidity=grid[T.getI()-1][T.getJ()].getSolidity();
     }
     else if(direction==DOWN){
         T.setAnim(animDown);
-        tempID=grid[T.getI()+1][T.getJ()].getID();
+        //tempID=grid[T.getI()+1][T.getJ()].getID();
         tempSolidity=grid[T.getI()+1][T.getJ()].getSolidity();
     }
     else if(direction==LEFT){
         T.setAnim(animLeft);
-        tempID=grid[T.getI()][T.getJ()-1].getID();
+        //tempID=grid[T.getI()][T.getJ()-1].getID();
         tempSolidity=grid[T.getI()][T.getJ()-1].getSolidity();
     }
     else if(direction==RIGHT){
         T.setAnim(animRight);
-        tempID=grid[T.getI()][T.getJ()+1].getID();
+        //tempID=grid[T.getI()][T.getJ()+1].getID();
         tempSolidity=grid[T.getI()][T.getJ()+1].getSolidity();
     }
     //enforce the updated animation
@@ -1951,6 +1952,9 @@ void pullSwitch(tile grid[][gridJ],int switchID){
         leftB=      animDoorOrangeLeftB;
         rightB=     animDoorOrangeRightB;
         upB=        animDoorOrangeUpB;
+    } else {
+        // if none of these, door is 0x00, return before mmEffectEx
+        return;
     }
 
     if(grid[door->getI()][door->getJ()].getID()!=doorID){
@@ -2518,7 +2522,7 @@ int populateLevelTwo(tile grid[][gridJ]){
     int workingI=0;
     int workingJ=0;
     int takenDirection=STOP;
-    int previousTakenDirection=STOP;
+    //int previousTakenDirection=STOP;
     int stepsTilJunct=0;
 
     //collect all the dead end pieces of the maze!
@@ -2574,28 +2578,28 @@ int populateLevelTwo(tile grid[][gridJ]){
 
     findAdjacentEmptyTiles(grid,tileEnd.getI(),tileEnd.getJ(),up,down,left,right);
     takenDirection=STOP;
-    previousTakenDirection=STOP;
+    //previousTakenDirection=STOP;
 
     if(up==0&&down==0&&left==0&&right==1){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         tileZombieB.setI(workingI);
         tileZombieB.setJ(workingJ+1);
         takenDirection=RIGHT;
     }
     else if(up==0&&down==0&&left==1&&right==0){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         tileZombieB.setI(workingI);
         tileZombieB.setJ(workingJ-1);
         takenDirection=LEFT;
     }
     else if(up==0&&down==1&&left==0&&right==0){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         tileZombieB.setI(workingI+1);
         tileZombieB.setJ(workingJ);
         takenDirection=DOWN;
     }
     else if(up==1&&down==0&&left==0&&right==0){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         tileZombieB.setI(workingI-1);
         tileZombieB.setJ(workingJ);
         takenDirection=UP;
@@ -2666,22 +2670,22 @@ int populateLevelTwo(tile grid[][gridJ]){
 
     findAdjacentEmptyTiles(grid,tileGold.getI(),tileGold.getJ(),up,down,left,right);
     takenDirection=STOP;
-    previousTakenDirection=STOP;
+    //previousTakenDirection=STOP;
 
     if(up==0&&down==0&&left==0&&right==1){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         takenDirection=RIGHT;
     }
     else if(up==0&&down==0&&left==1&&right==0){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         takenDirection=LEFT;
     }
     else if(up==0&&down==1&&left==0&&right==0){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         takenDirection=DOWN;
     }
     else if(up==1&&down==0&&left==0&&right==0){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         takenDirection=UP;
     }
 
@@ -2773,7 +2777,7 @@ int populateLevelThree(tile grid[][gridJ]){
     int workingI=0;
     int workingJ=0;
     int takenDirection=STOP;
-    int previousTakenDirection=STOP;
+    //int previousTakenDirection=STOP;
     int stepsTilJunct=0;
 
     //collect all the dead end pieces of the maze!
@@ -2829,28 +2833,28 @@ int populateLevelThree(tile grid[][gridJ]){
 
     findAdjacentEmptyTiles(grid,tileEnd.getI(),tileEnd.getJ(),up,down,left,right);
     takenDirection=STOP;
-    previousTakenDirection=STOP;
+    //previousTakenDirection=STOP;
 
     if(up==0&&down==0&&left==0&&right==1){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         tileZombieB.setI(workingI);
         tileZombieB.setJ(workingJ+1);
         takenDirection=RIGHT;
     }
     else if(up==0&&down==0&&left==1&&right==0){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         tileZombieB.setI(workingI);
         tileZombieB.setJ(workingJ-1);
         takenDirection=LEFT;
     }
     else if(up==0&&down==1&&left==0&&right==0){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         tileZombieB.setI(workingI+1);
         tileZombieB.setJ(workingJ);
         takenDirection=DOWN;
     }
     else if(up==1&&down==0&&left==0&&right==0){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         tileZombieB.setI(workingI-1);
         tileZombieB.setJ(workingJ);
         takenDirection=UP;
@@ -2910,28 +2914,28 @@ int populateLevelThree(tile grid[][gridJ]){
 
     findAdjacentEmptyTiles(grid,tileGreenButton.getI(),tileGreenButton.getJ(),up,down,left,right);
     takenDirection=STOP;
-    previousTakenDirection=STOP;
+    //previousTakenDirection=STOP;
 
     if(up==0&&down==0&&left==0&&right==1){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         tileZombieC.setI(workingI);
         tileZombieC.setJ(workingJ+1);
         takenDirection=RIGHT;
     }
     else if(up==0&&down==0&&left==1&&right==0){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         tileZombieC.setI(workingI);
         tileZombieC.setJ(workingJ-1);
         takenDirection=LEFT;
     }
     else if(up==0&&down==1&&left==0&&right==0){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         tileZombieC.setI(workingI+1);
         tileZombieC.setJ(workingJ);
         takenDirection=DOWN;
     }
     else if(up==1&&down==0&&left==0&&right==0){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         tileZombieC.setI(workingI-1);
         tileZombieC.setJ(workingJ);
         takenDirection=UP;
@@ -3039,7 +3043,7 @@ int populateLevelOne(tile grid[][gridJ]){
     int workingI=0;
     int workingJ=0;
     int takenDirection=STOP;
-    int previousTakenDirection=STOP;
+    //int previousTakenDirection=STOP;
     int stepsTilJunct=0;
 
     //collect all the dead end pieces of the maze!
@@ -3093,22 +3097,22 @@ int populateLevelOne(tile grid[][gridJ]){
 
     findAdjacentEmptyTiles(grid,tileEnd.getI(),tileEnd.getJ(),up,down,left,right);
     takenDirection=STOP;
-    previousTakenDirection=STOP;
+    //previousTakenDirection=STOP;
 
     if(up==0&&down==0&&left==0&&right==1){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         takenDirection=RIGHT;
     }
     else if(up==0&&down==0&&left==1&&right==0){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         takenDirection=LEFT;
     }
     else if(up==0&&down==1&&left==0&&right==0){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         takenDirection=DOWN;
     }
     else if(up==1&&down==0&&left==0&&right==0){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         takenDirection=UP;
     }
 
@@ -3227,18 +3231,18 @@ int populateLevelFive(tile grid[][gridJ]){
             if(grid[i][j].getID()==tileEmptyID){
 
                 findAdjacentEmptyTiles(grid,i,j,up,down,left,right);
-                int direction=0;
+                //int direction=0;
                 if(up==1&&down==0&&left==0&&right==0){
-                    direction=UP;
+                    //direction=UP;
                 }
                 else if(up==0&&down==1&&left==0&&right==0){
-                    direction=DOWN;
+                    //direction=DOWN;
                 }
                 else if(up==0&&down==0&&left==1&&right==0){
-                    direction=LEFT;
+                    //direction=LEFT;
                 }
                 else if(up==0&&down==0&&left==0&&right==1){
-                    direction=RIGHT;
+                    //direction=RIGHT;
                 }
 
                 if((up+down+left+right)==1){
@@ -3419,28 +3423,28 @@ int populateLevelFour(tile grid[][gridJ]){
 
     findAdjacentEmptyTiles(grid,I,J,up,down,left,right);
     int takenDirection=STOP;
-    int previousTakenDirection=STOP;
+    //int previousTakenDirection=STOP;
 
     if(up==0&&down==0&&left==0&&right==1){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         takenDirection=RIGHT;
         tileZombieA.setI(I);
         tileZombieA.setJ(J+1);
     }
     else if(up==0&&down==0&&left==1&&right==0){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         takenDirection=LEFT;
         tileZombieA.setI(I);
         tileZombieA.setJ(J-1);
     }
     else if(up==0&&down==1&&left==0&&right==0){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         takenDirection=DOWN;
         tileZombieA.setI(I+1);
         tileZombieA.setJ(J);
     }
     else if(up==1&&down==0&&left==0&&right==0){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         takenDirection=UP;
         tileZombieA.setI(I-1);
         tileZombieA.setJ(J);
@@ -3503,27 +3507,27 @@ int populateLevelFour(tile grid[][gridJ]){
 
     findAdjacentEmptyTiles(grid,I,J,up,down,left,right);
     takenDirection=STOP;
-    previousTakenDirection=STOP;
+    //previousTakenDirection=STOP;
     if(up==0&&down==0&&left==0&&right==1){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         takenDirection=RIGHT;
         tileZombieB.setI(I);
         tileZombieB.setJ(J+1);
     }
     else if(up==0&&down==0&&left==1&&right==0){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         takenDirection=LEFT;
         tileZombieB.setI(I);
         tileZombieB.setJ(J-1);
     }
     else if(up==0&&down==1&&left==0&&right==0){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         takenDirection=DOWN;
         tileZombieB.setI(I+1);
         tileZombieB.setJ(J);
     }
     else if(up==1&&down==0&&left==0&&right==0){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         takenDirection=UP;
         tileZombieB.setI(I-1);
         tileZombieB.setJ(J);
@@ -3548,21 +3552,21 @@ int populateLevelFour(tile grid[][gridJ]){
 
     findAdjacentEmptyTiles(grid,tileOrangeButton.getI(),tileOrangeButton.getJ(),up,down,left,right);
     takenDirection=STOP;
-    previousTakenDirection=STOP;
+    //previousTakenDirection=STOP;
     if(up==0&&down==0&&left==0&&right==1){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         takenDirection=RIGHT;
     }
     else if(up==0&&down==0&&left==1&&right==0){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         takenDirection=LEFT;
     }
     else if(up==0&&down==1&&left==0&&right==0){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         takenDirection=DOWN;
     }
     else if(up==1&&down==0&&left==0&&right==0){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         takenDirection=UP;
     }
 
@@ -3617,21 +3621,21 @@ int populateLevelFour(tile grid[][gridJ]){
 
     findAdjacentEmptyTiles(grid,tileZombieC.getI(),tileZombieC.getJ(),up,down,left,right);
     takenDirection=STOP;
-    previousTakenDirection=STOP;
+    //previousTakenDirection=STOP;
     if(up==0&&down==0&&left==0&&right==1){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         takenDirection=RIGHT;
     }
     else if(up==0&&down==0&&left==1&&right==0){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         takenDirection=LEFT;
     }
     else if(up==0&&down==1&&left==0&&right==0){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         takenDirection=DOWN;
     }
     else if(up==1&&down==0&&left==0&&right==0){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         takenDirection=UP;
     }
 
@@ -3686,21 +3690,21 @@ int populateLevelFour(tile grid[][gridJ]){
 
     findAdjacentEmptyTiles(grid,tileZombieD.getI(),tileZombieD.getJ(),up,down,left,right);
     takenDirection=STOP;
-    previousTakenDirection=STOP;
+    //previousTakenDirection=STOP;
     if(up==0&&down==0&&left==0&&right==1){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         takenDirection=RIGHT;
     }
     else if(up==0&&down==0&&left==1&&right==0){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         takenDirection=LEFT;
     }
     else if(up==0&&down==1&&left==0&&right==0){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         takenDirection=DOWN;
     }
     else if(up==1&&down==0&&left==0&&right==0){
-        previousTakenDirection=takenDirection;
+        //previousTakenDirection=takenDirection;
         takenDirection=UP;
     }
 
@@ -4414,7 +4418,7 @@ int main(void) {
 
     powerOn(POWER_ALL_2D);
 
-    vramSetMainBanks(VRAM_A_MAIN_BG_0x06000000,
+    vramSetPrimaryBanks(VRAM_A_MAIN_BG_0x06000000,
                      VRAM_B_MAIN_BG_0x06020000,
                      VRAM_C_SUB_BG_0x06200000,
                      VRAM_D_LCD);
