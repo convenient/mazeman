@@ -42,7 +42,7 @@ The only reasonable decisions I made in this project were
     export DEVKITPRO="/home/luker/src/mazeman/devkitpro/"
     export DEVKITARM=${DEVKITPRO}/devkitARM
     make
-    //Ignore the lack of compiler warnings and feel free to judge younger, past me.
+    //Ignore the compiler warnings and feel free to judge younger, past me.
 
 ## Contributing
 
@@ -51,3 +51,5 @@ This code is primarily on GitHub as a monument to my sins.
 I'd like to keep the `master` branch as-is, a time-capsule from Spring 2011.
 
 However, if you feel the desire to tidy up some of the mess then feel free to make a pull request to the `develop` branch.
+
+If you're working from the `develop` branch then the compiler warnings have been cleaned up by code archaeologist   [@jcolicchio](https://github.com/jcolicchio).
