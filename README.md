@@ -42,4 +42,4 @@ The only reasonable decisions I made in this project were
     export DEVKITPRO="/home/luker/src/mazeman/devkitpro/"
     export DEVKITARM=${DEVKITPRO}/devkitARM
     make
-    //Ignore the compiler warnings and feel free to judge younger, past me.
+    //Ignore the lack of compiler warnings and feel free to judge younger, past me.
