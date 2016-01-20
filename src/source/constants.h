@@ -1,3 +1,12 @@
+#ifndef CONSTANTS_H
+#define CONSTANTS_H
+
+#define QUOTECOUNT 9
+#define HINTCOUNT 8
+
+extern const char *QUOTES[QUOTECOUNT];
+extern const char *HINTS[HINTCOUNT];
+
 const int tileEndID=0, tileMazeManID=1, tileWallID=2, tileEmptyID=3, tileRDoorID=6, tileRedButtonID=7,
             tileGDoorID=9, tileGreenButtonID=10, tileZombieAID=11, tileZombieCID=12, tileRockID=14,
             tileZombieBID=15,tileBlueButtonID=16, tileBlueDoorID=17, tileBlueButtonBetaID=18, tileBlueDoorBetaID=19, tileRDoorBetaID=20,
@@ -33,84 +42,88 @@ const int spriteWallU=13, spriteWallD=14, spriteWallL=15, spriteWallR=16, sprite
             spriteDoorOrangeRight=130, spriteDoorOrangeRightB=131, spriteDoorOrangeRightC=132, spriteDoorOrangeRightD=133,
             spriteOrangeButtonUp=134, spriteOrangeButtonMiddle=135, spriteOrangeButtonDown=136,spriteGold=141;
 
-int animManLeft [4]     = {spriteManLeft,spriteManLeftA,spriteManLeftB,-1};
-int animManRight [4]    = {spriteManDown,spriteManDownA,spriteManDownB,-1};
-int animManUp [4]       = {spriteManUp,spriteManUpA,spriteManUpB,-1};
-int animManDown [4]     = {spriteManDown, spriteManDownA, spriteManDownB,-1};
+extern int animManLeft [4];
+extern int animManRight [4];
+extern int animManUp [4];
+extern int animManDown [4];
 
 //items
-int animDoorUp [5]    = {spriteDoorDown,spriteDoorDownB,spriteDoorDownC,spriteDoorDownD,-1};
-int animDoorDown [5]    = {spriteDoorDown,spriteDoorDownB,spriteDoorDownC,spriteDoorDownD,-1};
-int animDoorLeft [5]    = {spriteDoorLeft,spriteDoorLeftB,spriteDoorLeftC,spriteDoorLeftD,-1};
-int animDoorRight [5]    = {spriteDoorRight,spriteDoorRightB,spriteDoorRightC,spriteDoorRightD,-1};
+extern int animDoorUp [5];
+extern int animDoorDown [5];
+extern int animDoorLeft [5];
+extern int animDoorRight [5];
 
-int animDoorUpB [5]    = {spriteDoorDownD,spriteDoorDownC,spriteDoorDownB,spriteDoorDown,-1};
-int animDoorDownB [5]    = {spriteDoorDownD,spriteDoorDownC,spriteDoorDownB,spriteDoorDown,-1};
-int animDoorLeftB [5]    = {spriteDoorLeftD,spriteDoorLeftC,spriteDoorLeftB,spriteDoorLeft,-1};
-int animDoorRightB [5]    = {spriteDoorRightD,spriteDoorRightC,spriteDoorRightB,spriteDoorRight,-1};
+extern int animDoorUpB [5];
+extern int animDoorDownB [5];
+extern int animDoorLeftB [5];
+extern int animDoorRightB [5];
 
-int animRButton [4]     = {spriteRButtonUp, spriteRButtonMiddle, spriteRButtonDown,-1};
-int animRButtonB [4]     = {spriteRButtonDown, spriteRButtonMiddle, spriteRButtonUp,-1};
+extern int animRButton [4];
+extern int animRButtonB [4];
 
-int animDoorGUp [5] = {spriteDoorGDown,spriteDoorGDownB, spriteDoorGDownC, spriteDoorGDownD, -1};
-int animDoorGDown [5] = {spriteDoorGDown,spriteDoorGDownB, spriteDoorGDownC, spriteDoorGDownD, -1};
-int animDoorGRight [5] = {spriteDoorGRight,spriteDoorGRightB,spriteDoorGRightC,spriteDoorGRightD, -1};
-int animDoorGLeft [5] = {spriteDoorGLeft,spriteDoorGLeftB,spriteDoorGLeftC,spriteDoorGLeftD,-1};
+extern int animDoorGUp [5];
+extern int animDoorGDown [5];
+extern int animDoorGRight [5];
+extern int animDoorGLeft [5];
 
-int animDoorGUpB [5] = {spriteDoorGDownD,spriteDoorGDownC, spriteDoorGDownB, spriteDoorGDown, -1};
-int animDoorGDownB [5] = {spriteDoorGDownD,spriteDoorGDownC, spriteDoorGDownB, spriteDoorGDown, -1};
-int animDoorGRightB [5] = {spriteDoorGRightD,spriteDoorGRightC,spriteDoorGRightB,spriteDoorGRight, -1};
-int animDoorGLeftB [5] = {spriteDoorGLeftD,spriteDoorGLeftC,spriteDoorGLeftB,spriteDoorGLeft,-1};
+extern int animDoorGUpB [5];
+extern int animDoorGDownB [5];
+extern int animDoorGRightB [5];
+extern int animDoorGLeftB [5];
 
-int animGButton [4]     = {spriteGButtonUp, spriteGButtonMiddle, spriteGButtonDown,-1};
-int animGButtonB [4]     = {spriteGButtonDown, spriteGButtonMiddle, spriteGButtonUp,-1};
+extern int animGButton [4];
+extern int animGButtonB [4];
 
-int animEnd [6]         = {spriteEndDown,spriteEndDownB, spriteEndDownC,spriteEndDownD,spriteEndDownE,-1};
+extern int animEnd [6];
 
-int animZombieUp [4] = {spriteZombieUp,spriteZombieUpB,spriteZombieUpC,-1};
-int animZombieLeft [4] = {spriteZombieLeft,spriteZombieLeftB,spriteZombieLeftC,-1};
-int animZombieRight [4] = {spriteZombieRight,spriteZombieRightB,spriteZombieRightC,-1};
-int animZombieDown [4] = {spriteZombieRight,spriteZombieRightB,spriteZombieRightC,-1};
+extern int animZombieUp [4];
+extern int animZombieLeft [4];
+extern int animZombieRight [4];
+extern int animZombieDown [4];
 
-int animZombieBLeft [4] = {spriteZombieBLeft,spriteZombieBLeftB,spriteZombieBLeftC,-1};
-int animZombieBUp [4] = {spriteZombieBUp,spriteZombieBUpB,spriteZombieBUpC,-1};
-int animZombieBRight [4] = {spriteZombieBRight,spriteZombieBRightB,spriteZombieBRightC,-1};
-int animZombieBDown [4] = {spriteZombieBRight,spriteZombieBRightB,spriteZombieBRightC,-1};
+extern int animZombieBLeft [4];
+extern int animZombieBUp [4];
+extern int animZombieBRight [4];
+extern int animZombieBDown [4];
 
-int animZombieCLeft [4] = {spriteZombieCLeft,spriteZombieCLeftB,spriteZombieCLeftC,-1};
-int animZombieCUp [4] = {spriteZombieCUp,spriteZombieCUpB,spriteZombieCUpC,-1};
-int animZombieCRight [4] = {spriteZombieCRight,spriteZombieCRightB,spriteZombieCRightC,-1};
-int animZombieCDown [4] = {spriteZombieCRight,spriteZombieCRightB,spriteZombieCRightC,-1};
+extern int animZombieCLeft [4];
+extern int animZombieCUp [4];
+extern int animZombieCRight [4];
+extern int animZombieCDown [4];
 
-int animBlueButton [4]     = {spriteBlueButtonUp, spriteBlueButtonMiddle, spriteBlueButtonDown,-1};
-int animBlueButtonB [4]     = {spriteBlueButtonDown, spriteBlueButtonMiddle, spriteBlueButtonUp,-1};
+extern int animBlueButton [4];
+extern int animBlueButtonB [4];
 
-int animDoorBlueUp [5] = {spriteDoorBlueDown,spriteDoorBlueDownB, spriteDoorBlueDownC, spriteDoorBlueDownD, -1};
-int animDoorBlueDown [5] = {spriteDoorBlueDown,spriteDoorBlueDownB, spriteDoorBlueDownC, spriteDoorBlueDownD, -1};
-int animDoorBlueLeft [5] = {spriteDoorBlueLeft,spriteDoorBlueLeftB,spriteDoorBlueLeftC,spriteDoorBlueLeftD, -1};
-int animDoorBlueRight [5] = {spriteDoorBlueRight,spriteDoorBlueRightB,spriteDoorBlueRightC,spriteDoorBlueRightD,-1};
+extern int animDoorBlueUp [5];
+extern int animDoorBlueDown [5];
+extern int animDoorBlueLeft [5];
+extern int animDoorBlueRight [5];
 
-int animDoorBlueUpB [5] = {spriteDoorBlueDownD,spriteDoorBlueDownC, spriteDoorBlueDownB, spriteDoorBlueDown, -1};
-int animDoorBlueDownB [5] = {spriteDoorBlueDownD,spriteDoorBlueDownC, spriteDoorBlueDownB, spriteDoorBlueDown, -1};
-int animDoorBlueLeftB [5] = {spriteDoorBlueLeftD,spriteDoorBlueLeftC,spriteDoorBlueLeftB,spriteDoorBlueLeft, -1};
-int animDoorBlueRightB [5] = {spriteDoorBlueRightD,spriteDoorBlueRightC,spriteDoorBlueRightB,spriteDoorBlueRight,-1};
+extern int animDoorBlueUpB [5];
+extern int animDoorBlueDownB [5];
+extern int animDoorBlueLeftB [5];
+extern int animDoorBlueRightB [5];
 
-int animDoorOrangeUp [5] = {spriteDoorOrangeDown,spriteDoorOrangeDownB, spriteDoorOrangeDownC, spriteDoorOrangeDownD, -1};
-int animDoorOrangeDown [5] = {spriteDoorOrangeDown,spriteDoorOrangeDownB, spriteDoorOrangeDownC, spriteDoorOrangeDownD, -1};
-int animDoorOrangeLeft [5] = {spriteDoorOrangeLeft,spriteDoorOrangeLeftB,spriteDoorOrangeLeftC,spriteDoorOrangeLeftD, -1};
-int animDoorOrangeRight [5] = {spriteDoorOrangeRight,spriteDoorOrangeRightB,spriteDoorOrangeRightC,spriteDoorOrangeRightD,-1};
+extern int animDoorOrangeUp [5];
+extern int animDoorOrangeDown [5];
+extern int animDoorOrangeLeft [5];
+extern int animDoorOrangeRight [5];
 
-int animDoorOrangeUpB [5] = {spriteDoorOrangeDownD,spriteDoorOrangeDownC, spriteDoorOrangeDownB, spriteDoorOrangeDown, -1};
-int animDoorOrangeDownB [5] = {spriteDoorOrangeDownD,spriteDoorOrangeDownC, spriteDoorOrangeDownB, spriteDoorOrangeDown, -1};
-int animDoorOrangeLeftB [5] = {spriteDoorOrangeLeftD,spriteDoorOrangeLeftC,spriteDoorOrangeLeftB,spriteDoorOrangeLeft, -1};
-int animDoorOrangeRightB [5] = {spriteDoorOrangeRightD,spriteDoorOrangeRightC,spriteDoorOrangeRightB,spriteDoorOrangeRight,-1};
+extern int animDoorOrangeUpB [5];
+extern int animDoorOrangeDownB [5];
+extern int animDoorOrangeLeftB [5];
+extern int animDoorOrangeRightB [5];
 
-int animOrangeButton [4]     = {spriteOrangeButtonUp, spriteOrangeButtonMiddle, spriteOrangeButtonDown,-1};
-int animOrangeButtonB [4]     = {spriteOrangeButtonDown, spriteOrangeButtonMiddle, spriteOrangeButtonUp,-1};
+extern int animOrangeButton [4];
+extern int animOrangeButtonB [4];
 
-int animGold [2]     = {spriteGold,-1};
+extern int animGold [2];
 
 const int UP = 0, LEFT = 2, DOWN = 1, RIGHT = 3, STOP=4;
 const int EASY=0, NORMAL=1, HARD=2;
 const int picMenu=0, picOne=1, picTwo=3, picThree=4, picFour=2, picFive=5, picInst=6, picDeath=7;
 const int typeRock=0, typeZomb=1, typeNone=2;
+
+const int gridJ=31; const int gridI=23;
+
+#endif
